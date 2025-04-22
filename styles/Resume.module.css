@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    height: 100vh;
+    font-family: var(--font-jost);
+  }
+  
+  .left,
+  .right {
+    flex: 1;
+    padding: 2rem;
+    border: 1px solid #eaeaea;
+    overflow-y: auto;
+  }
+  
+  .left {
+    background-color: #f9f9f9;
+  }
+  
+  .right {
+    background-color: #ffffff;
+  }
+  
+  .preview {
+    width: 100%;
+    height: 60vh;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+  }
+  
+  .textOutput {
+    margin-top: 1rem;
+    background: #f1f1f1;
+    padding: 1rem;
+    white-space: pre-wrap;
+    border-radius: 4px;
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+  
