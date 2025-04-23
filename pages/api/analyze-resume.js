@@ -9,18 +9,24 @@ export default async function handler(req, res) {
   }
 
   const prompt = `
-Please analyze the following resume text and return the results in these structured sections:
-
-1. **Candidate Summary**: A brief overview of the candidate's profile and goals.
-2. **Skill Analysis**: Highlight and evaluate the candidate's technical and soft skills.
-3. **Experience Breakdown**: Analyze work experience and projects. Emphasize quantifiable results and impact.
-4. **Language & Tone**: Comment on the professionalism, clarity, and tone of the resume.
-5. **Overall Recommendation**: Summarize strengths, areas for improvement, and tips to tailor for job roles.
-
-Be objective and do not talk conversationally. Do not include title of "Resume Analysis".
-
-Resume text:
-${text}
+  Analyze the following resume text and provide a structured, objective evaluation using the format below:
+  
+  1. **Candidate Summary** — Summarize the candidate’s background, career goals, and overall profile.
+  2. **Skill Analysis** — Identify and evaluate technical and soft skills. Highlight strengths, notable gaps, or missing core competencies.
+  3. **Experience Breakdown** — Review work experience and projects. Emphasize measurable achievements, impact, and relevance to target roles.
+  4. **Language & Tone** — Assess clarity, professionalism, consistency, and effectiveness of communication.
+  5. **Overall Recommendation** — Offer a summary of the candidate’s strengths and weaknesses. Include actionable tips for refinement and job targeting.
+  
+  **Formatting Requirements**:
+  - Each section must begin with a Markdown H1-style strong title: \`**Section Title**\`.
+  - Do not include any introductory or closing remarks.
+  - Do not include a section titled "Resume Analysis".
+  - Maintain a professional, neutral, and non-conversational tone.
+  - At the end of **each section**, include an insights paragraph beginning with a Markdown H2-style strong title.
+    Example: \`Insight: Candidate demonstrates strong fundamentals in front-end development but lacks experience with modern frameworks like React or Vue.\`
+  
+  Resume text:
+  ${text}
   `;
 
   try {

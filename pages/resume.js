@@ -96,7 +96,7 @@ export default function Resume() {
   return (
     <>
       <Head>
-        <title>AI Resume Analyzer</title>
+        <title>Resume</title>
         <meta name="description" content="Analyze your resume using AI" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -105,19 +105,38 @@ export default function Resume() {
       <div className={`${styles.container} ${jost.variable}`}>
         {/* Left Side */}
         <div className={styles.left}>
-          <div>
-            <h2>Upload Your Resume</h2>
+          <div className={styles.uploadContainer}>
+            <h2 className={styles.uploadTitle}>
+              Upload Your <i>Resume</i>
+            </h2>
+            <label htmlFor="file-upload" className={styles.uploadBtn}>
+              <span className={styles.uploadContent}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="30px"
+                  viewBox="0 -960 960 960"
+                  width="30px"
+                  fill="#87B895"
+                >
+                  <path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z" />
+                </svg>
+                <span>Upload a File</span>
+              </span>
+            </label>
+
             <input
+              id="file-upload"
               type="file"
               accept=".pdf,image/*"
               onChange={handleFileChange}
+              style={{ display: "none" }}
             />
           </div>
 
-          <h3>Gemini Analysis</h3>
+          <h2 className={styles.analysisTitle}>Analysis</h2>
           <div className={styles.textOutput}>
             {loading ? (
-              <p>Analyzing resume...</p>
+              <p>Analyzing resume.</p>
             ) : analysis ? (
               <ReactMarkdown>{analysis}</ReactMarkdown>
             ) : (
@@ -131,7 +150,11 @@ export default function Resume() {
           <h2>Preview</h2>
           {previewURL ? (
             file?.type === "application/pdf" ? (
-              <iframe src={previewURL} className={styles.preview} />
+              <iframe
+                src={`${previewURL}#toolbar=0&navpanes=0&scrollbar=0`}
+                className={styles.preview}
+                style={{ overflow: "auto" }}
+              />
             ) : (
               <img
                 src={previewURL}
@@ -140,7 +163,7 @@ export default function Resume() {
               />
             )
           ) : (
-            <p>No file uploaded</p>
+            <p>No file uploaded.</p>
           )}
         </div>
       </div>

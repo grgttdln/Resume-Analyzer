@@ -19,22 +19,87 @@
   .right {
     background-color: #ffffff;
   }
+
+  .right h2 {
+    background-color: #E2EEE4;
+  }
+
+  .right p {
+    margin-top: 2rem;
+  }
   
   .preview {
     width: 100%;
-    height: 60vh;
-    object-fit: contain;
-    border: 1px solid #ccc;
+    height: 85vh;
     margin-top: 1rem;
+    overflow: hidden;  
   }
   
+
+
   .textOutput {
     margin-top: 1rem;
-    background: #f1f1f1;
-    padding: 1rem;
     white-space: pre-wrap;
     border-radius: 4px;
-    max-height: 30vh;
     overflow-y: auto;
+  }
+  
+ 
+
+  .uploadTitle {
+    margin-bottom: 1rem;
+    background-color: #E2EEE4;
+  }
+
+  .analysisTitle {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    background-color: #E2EEE4;
+  }
+
+  .uploadContainer {
+    width: 100%;
+  }
+
+
+  .uploadBtn {
+    cursor: pointer;
+    border: 3px solid #87B895;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 20px;
+    color: #87B895;
+    width: 100%;
+    display: block;
+  }
+  
+  .uploadContent {
+    display: flex;
+    gap: 0.5rem; 
+    margin-left: 1rem;
+  }
+
+
+  .textOutput h1 strong {
+    background-color: #E2EEE4;
+    display: block;          
+    width: 100%;             
+    padding: 0.5rem 1rem;    
+    border-radius: 4px;      
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .textOutput ul li {
+    list-style: none;
+  }
+
+  .textOutput h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 1rem;
+    border-left: 5px solid #E2EEE4; 
+    color: #1f1f1f;
+    margin-bottom: 1.5rem;
   }
   
